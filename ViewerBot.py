@@ -15,7 +15,7 @@ urls = []
 urlsUsed = []
  
 def getURL(): # Get tokens
-  output = subprocess.Popen(["livestreamer", "www.twitch.tv/espacefr", "-j"], stdout=subprocess.PIPE).communicate()[0]
+  output = subprocess.Popen(["livestreamer", "www.twitch.tv/radiojavantv", "-j"], stdout=subprocess.PIPE).communicate()[0]
   l = json.loads(output.decode()) # Parse json and return the URL parameter
   if 'streams' in l and 'worst' in l['streams'] and 'url' in l['streams']['worst']:
   	return l['streams']['worst']['url']
